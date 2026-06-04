@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.2em;
+        }
+        
+        .user-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .user-label {
+            font-weight: bold;
+            color: #333;
+            min-width: 120px;
+            font-size: 1.05em;
+        }
+        
+        .user-value {
+            color: #667eea;
+            font-weight: 600;
+            text-align: right;
+            flex: 1;
+        }
+        
+        .user-icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .alert {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👥 Información de Usuarios</h1>
+        
+        <div class="alert">
+            Datos del usuario actualmente registrado en el sistema
+        </div>
+        
+        <div class="user-card">
+            <div class="user-icon">👤</div>
+            
+            <div class="user-item">
+                <span class="user-label">Nombre:</span>
+                <span class="user-value" th:text="${usuario.nombre}">Luis Teran</span>
+            </div>
+            
+            <div class="user-item">
+                <span class="user-label">Cedula:</span>
+                <span class="user-value" th:text="${usuario.cedula}">17140325871</span>
+            </div>
+            
+            <div class="user-item">
+                <span class="user-label">Correo:</span>
+                <span class="user-value" th:text="${usuario.correo}">lteran@gmail.com</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
